@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value ="${pageContext.request.contextPath}"/>
 <%--
   Created by IntelliJ IDEA.
   User: Whan
@@ -34,6 +35,7 @@
 </head>
 <body>
 <h1>자유게시판</h1>
+<table id ='list' width="90%">
 <tr>
     <th>Id</th>
     <th>Category</th>
@@ -47,8 +49,7 @@
 </tr>
 
 
-<c:forEach items="${list}" var="u">
-<table>
+<c:forEach items="${template}" var="u">
     <tr>
         <td>${u.seq}</td>
         <td>${u.category}</td>
@@ -57,7 +58,7 @@
         <td>${u.content}</td>
         <td>${u.regdate}</td>
         <td><a href="editform/${u.seq}">글 수정</a></td>
-    <td><a href="javascript:delete_ok('${u.seq}')"글 삭제 </a> </td>
+        <td><a href="javascript:delete_ok('${u.seq}')">글 삭제 </a> </td>
     </tr>
 
 </c:forEach>

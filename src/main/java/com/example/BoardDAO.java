@@ -17,6 +17,9 @@ import java.util.List;
 public class BoardDAO {
     @Autowired
     private JdbcTemplate template ;
+    public void setTemplate(JdbcTemplate template){
+        this.template = template;
+    }
     Connection conn = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;
