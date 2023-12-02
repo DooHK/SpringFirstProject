@@ -5,5 +5,6 @@
 </head>
 <body>
 <h2>안녕! 김두환</h2>
+<jsp:forward page="list.jsp" />
 </body>
 </html>
